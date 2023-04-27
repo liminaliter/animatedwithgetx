@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'detailscreen/my_detail_screen.dart';
 import 'onboarding/onboarding_screen.dart';
 
 void main() {
@@ -30,7 +31,11 @@ class MyApp extends StatelessWidget {
           focusedBorder: defaultInputBorder,
         ),
       ),
-      home: const OnboardingScreen(),
+      initialRoute: "/",
+      getPages: [
+        GetPage(name: "/", page: () => const OnboardingScreen()),
+        GetPage(name: "/detail", page: () => const DetailScreen()),
+      ],
     );
   }
 }
